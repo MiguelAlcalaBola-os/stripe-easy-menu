@@ -2,30 +2,51 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Burgerbutton from "../Logueado/Burgerbutton";
 import { BrowserRouter, Link, Outlet } from "react-router-dom"
+
+import 'firebase/compat/auth';
+import { useHistory } from 'react-router-dom';
+import LogoutButton from '../Logueado/LogoutButton';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { FirebaseAppProvider } from 'reactfire';
+import firebase from "../../firebase/firebaseClient";
+ 
+
 function Navbar() {
 
+  const [user, userLoading] = useAuthState(firebase.auth());
+ 
   const [clicked, setClicked] = useState(false)
+
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
     setClicked(!clicked)
   }
+
   return (
-    <>
+    
+<>
+
       <NavContainer>
         <h2>EASY <span>MENU</span></h2>
+        <h1>Hello, {user.displayName}</h1> 
         <div className={`links ${clicked ? 'active' : ''}`}>
       
-        
+        <LogoutButton />
+
+
           <a href='#'>Salir</a>
         
 <Outlet/>
+
         </div>
         <div className='burguer'>
           <Burgerbutton clicked={clicked} handleClick={handleClick} />
         </div>
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
       </NavContainer>
-    </>
+  </>
+
+    
   )
 }
 

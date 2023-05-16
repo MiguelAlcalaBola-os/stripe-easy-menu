@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import Banner from "./Banner";
 import Footer from "../Footer";
+import ComoFunciona from "./ComoFunciona";
 
 function Inicio() {
   return (
@@ -15,16 +16,18 @@ function Inicio() {
 
         <Images>
           <div className="flex-item">
-            <img src="https://i.pinimg.com/originals/bd/c2/48/bdc248a325858c5e585b0a97af8c2226.png"></img>
+            <img src="https://i.ibb.co/ZzmdbGQ/6117151.png"></img>
             <p>esta es uan descripcion, esta es uan descripcion, esta es uan descripcion</p> </div>  <div className="flex-item">
               </div>
           <div className="flex-item">
-            <img src="https://i.pinimg.com/originals/bd/c2/48/bdc248a325858c5e585b0a97af8c2226.png"></img>
+            
+            <img src="https://i.ibb.co/f8BDYcP/2951386731633054673-512.png"></img>
             <p>esta es uan descripcion, esta es uan descripcion, esta es uan descripcion</p> </div>  <div className="flex-item">
-            <img src="https://i.pinimg.com/originals/bd/c2/48/bdc248a325858c5e585b0a97af8c2226.png"></img>
+            <img src="https://i.ibb.co/37TNNsh/productivity.png"></img>
             <p>esta es uan descripcion, esta es uan descripcion, esta es uan descripcion</p> </div>
         </Images>
       </Texts>
+      <ComoFunciona/>
   <Footer></Footer>
     </>
   );

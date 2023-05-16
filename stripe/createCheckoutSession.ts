@@ -1,7 +1,8 @@
 import firebase from "../firebase/firebaseClient";
 import initializeStripe from "./initializeStripe";
 
-export async function createCheckoutSession(uid: string) {
+export async function createCheckoutSession(uid: string, idProducto: string) {
+
   const firestore = firebase.firestore();
 
   // Create a new checkout session in the subollection inside this users document
@@ -10,12 +11,13 @@ export async function createCheckoutSession(uid: string) {
     .doc(uid)
     .collection("checkout_sessions")
     .add({
-      price: "price_XXXXX",
+      price: idProducto,
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
 
   // Wait for the CheckoutSession to get attached by the extension
+  
   checkoutSessionRef.onSnapshot(async (snap) => {
     const { sessionId } = snap.data();
     if (sessionId) {
@@ -23,6 +25,10 @@ export async function createCheckoutSession(uid: string) {
       // Init Stripe
       const stripe = await initializeStripe();
       stripe.redirectToCheckout({ sessionId });
+      
+    
     }
   });
 }
+
+

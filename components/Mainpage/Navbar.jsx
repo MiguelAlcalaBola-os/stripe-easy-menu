@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Burgerbutton from "./Burgerbutton";
 import { BrowserRouter, Link, Outlet } from "react-router-dom"
+
 function Navbar() {
 
   const [clicked, setClicked] = useState(false)
@@ -12,7 +13,7 @@ function Navbar() {
   return (
     <>
       <NavContainer>
-        <h2>Navbar <span>Responsive</span></h2>
+        <h2>Easy <span>Menu</span></h2>
         <div className={`links ${clicked ? 'active' : ''}`}>
       
           <a href='#'>Inicio</a>
@@ -38,19 +39,21 @@ export default Navbar
           <Link to="#h">¿Quienes Somos?</Link>*/
 const NavContainer = styled.nav`
   h2{
-    color: white;
+    font-family: "Secular One", sans-serif;
+    color: #6cbdff;
     font-weight: 400;
     span{
+      color: #6cbdff;
       font-weight: bold;
     }
   }
   padding: .4rem;
-  background-color: #333;
+  background-color: #fcfcfc;
   display: flex;
   align-items: center;
   justify-content: space-between;
   a{
-    color: white;
+    color: #000000;
     text-decoration: none;
     margin-right: 1rem;
   }
@@ -64,7 +67,7 @@ const NavContainer = styled.nav`
     text-align: center;
     transition: all .5s ease;
     a{
-      color: white;
+      color: #000000;
       font-size: 2rem;
       display: block;
     }
@@ -73,8 +76,9 @@ const NavContainer = styled.nav`
       margin: 0;
       a{
         font-size: 1rem;
-        color: white;
+        color: #000000;
         display: inline;
+        font-family: "Secular One", sans-serif;
       }
       display: block;
     }
