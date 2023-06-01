@@ -42,7 +42,7 @@ export default function Login({}: Props): ReactElement {
           <div className="flex-item">
             <img src="https://i.ibb.co/37TNNsh/productivity.png"></img>
             <p>
-            Mejora la productividad de tu restaurante 
+            Modifícalo cuantas veces quieras
             </p>{" "}
           </div>
         </Images>

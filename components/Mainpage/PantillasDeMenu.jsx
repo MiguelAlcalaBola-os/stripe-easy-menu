@@ -6,7 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
+
   h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -63,7 +63,7 @@ const PlantillasDeMenu = () => {
    
       <Title>Plantillas de Menú</Title>
       <h2>
-        Estas son nuestras plantillas más utilizadas en las últimas semanas
+      Estas son algunas de las creaciones de nuestros clientes
       </h2>
      
       <ImagesContainer>

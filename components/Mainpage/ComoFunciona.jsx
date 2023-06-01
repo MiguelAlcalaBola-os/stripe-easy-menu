@@ -33,6 +33,7 @@ const StepContainer = styled.div`
 const StepDescription = styled.p`
   font-size: 1.5rem;
   margin-left: 2rem;
+  font-family: "Secular One", sans-serif;
 `;
 
 const ImageContainer = styled.div`
@@ -85,7 +86,7 @@ const ComoFunciona = () => {
       </StepContainer>
       <StepContainer>
       <Icon src="https://i.ibb.co/9H48JG5/exportar.png" />
-        <StepDescription>Exportar</StepDescription>
+        <StepDescription>Exportalo en PDF</StepDescription>
       
       </StepContainer>
      

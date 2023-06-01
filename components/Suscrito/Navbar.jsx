@@ -49,7 +49,7 @@ const Link = styled.a`
   }
 `;
 
-const Sidebar = () => {
+const Navbar = () => {
  return (
     <div>
     <SideBarContainer>
@@ -82,4 +82,4 @@ const Sidebar = () => {
  );
 };
 
-export default Sidebar;
+export default Navbar;

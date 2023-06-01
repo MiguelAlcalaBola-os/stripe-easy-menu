@@ -16,15 +16,18 @@
     "font-awesome": "^4.7.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
+    "konva": "^9.0.2",
     "next": "^11.1.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-firebase-hooks": "^3.0.4",
     "react-google-login": "^5.2.2",
     "react-icons": "^4.8.0",
+    "react-konva": "^18.2.8",
     "react-router-dom": "^6.11.0",
     "reactfire": "^4.2.2",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "webpack": "^5.85.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.13",

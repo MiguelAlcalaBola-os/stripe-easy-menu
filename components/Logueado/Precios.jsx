@@ -13,7 +13,7 @@ function Precios() {
       <br />
       <Images>
         <div className="flex-item">
-          <h3>Económico 4.99$</h3>
+          <h3>Básico 9,99€</h3>
           <img src="https://i.ibb.co/ZxvPRWm/economico.png"></img>
           <p>Tendrás acceso a ciertos beneficios de Easy-Menu</p>
         </div>
@@ -21,7 +21,7 @@ function Precios() {
         <hr />
 
         <div className="flex-item">
-          <h3>Premium 8.99$</h3>
+          <h3>Premium 19,99€ </h3>
           <img src="https://i.ibb.co/g3rc5T2/Premium-2.png"></img>
           <p>Obtendrás todos los beneficios de Easy-Menu</p>
         </div>

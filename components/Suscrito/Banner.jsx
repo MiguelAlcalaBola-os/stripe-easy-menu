@@ -1,11 +1,5 @@
-import React from "react";
-import styled from "styled-components";
-import Img from "../../Assets/easy_menu.png";
-import { SiFacebook } from "react-icons/si";
-import firebase from "../../firebase/firebaseClient";
-import Parrafos from "./Parrafos";
-import GoogleLogin from "react-google-login";
-
+import React from 'react'
+import styled from 'styled-components'
 function Banner() {
   return (
     <div className="padre">
@@ -13,29 +7,20 @@ function Banner() {
         <Container>
           <Texts>
             <h1 className="green">
-              Crear y modificar su menu se convirtió en un juego de niños
+            Nuestras Plantillas de menú 
             </h1>
 
             <p>
-              En el competitivo mundo de la industria de restaurantes, la
-              presentación y la facilidad de acceso de tu menú pueden marcar la
-              diferencia entre el éxito y el estancamiento. Es por eso que te
-              presentamos Menu-Easy, una herramienta en línea diseñada
-              específicamente para dueños de restaurantes que desean crear menús
-              atractivos y funcionales de manera sencilla. Permíteme mostrarte
-              por qué Menu-Easy es la elección perfecta para elevar la
-              experiencia de tus clientes y optimizar tus operaciones.
+            Seleccione un modelo de menú, rellénelo en líneas y expórtelo en PDF en solo algunos minutos.
             </p>
-            <Parrafos />
+       
             <p>
-              Creamos menús tan rápido y fácil que no sentirás que es un trabajo
-              facilitando así tu vida, puedes descargar tu menú en formato PDF
-              para hacer con él lo que plazcas.
+            ¿El modelo seleccionado no le gusta lo suficiente? Adáptelo o seleccione otro en un solo click!.
             </p>
 
             {/* 
    <button onClick={() => signInWithGithub()}>SuscribirmeGitHub</button> */}
-            <button onClick={() => signInWithGoogle()}>Comencenmos</button>
+            
 
             {/*
  
@@ -50,30 +35,24 @@ function Banner() {
           </Texts>
 
           <Profile>
-            <img src="https://i.ibb.co/0jRMs1Q/Img-Banner.png"></img>
+            <img src="https://i.ibb.co/GpsTw8J/EASY-MENU-plant.png"></img>
           </Profile>
         </Container>
         <br />
         <br />
       </div>
     </div>
-  );
+  )
 }
 
-/* */
-
-const respuestaGoogle = (respuesta) => {
-  console.log(respuesta);
-};
-
-export default Banner;
+export default Banner
 
 const Container = styled.div`
   font-family: "Secular One", sans-serif;
   display: flex;
   gap: 2rem;
 
-  width: 90%;
+  width: 90%; 
   max-width: 1280px;
   margin: 0 auto;
   z-index: 1;
@@ -86,7 +65,7 @@ const Container = styled.div`
 `;
 const Texts = styled.div`
   flex: 1;
-
+margin-top: 4rem;
   h4 {
     padding: 1rem 0;
 
@@ -94,7 +73,7 @@ const Texts = styled.div`
     font-family: "Secular One", sans-serif;
   }
   h1 {
-    color: #04b6bf;
+    color: #25adad;
     font-size: 1.8rem;
     font-family: "Secular One", sans-serif;
   }
@@ -106,6 +85,7 @@ const Texts = styled.div`
     font-family: "Secular One", sans-serif;
   }
   p {
+    margin-top: 2rem;
     font-weight: 300;
     font-size: 1.2rem;
     font-family: "Secular One", sans-serif;
@@ -163,7 +143,7 @@ const Social = styled.div`
 const Profile = styled.div`
   img {
     margin-top: 2rem;
-    width: 26rem;
+    width: 40rem;
     /* filter: drop-shadow(0px 10px 10px #01be9570); */
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
@@ -180,34 +160,3 @@ const Profile = styled.div`
     transform: translateY(-10px);
   }
 `;
-
-async function signInWithGithub() {
-  const userCredentials = await firebase
-    .auth()
-    .signInWithPopup(new firebase.auth.GithubAuthProvider());
-
-  console.log({ ...userCredentials.user });
-
-  firebase.firestore().collection("users").doc(userCredentials.user.uid).set({
-    uid: userCredentials.user.uid,
-    email: userCredentials.user.email,
-    name: userCredentials.user.displayName,
-    provider: userCredentials.user.providerData[0].providerId,
-    photoUrl: userCredentials.user.photoURL,
-  });
-}
-
-async function signInWithGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  const userCredentials = await firebase.auth().signInWithPopup(provider);
-
-  console.log({ ...userCredentials.user });
-
-  firebase.firestore().collection("users").doc(userCredentials.user.uid).set({
-    uid: userCredentials.user.uid,
-    email: userCredentials.user.email,
-    name: userCredentials.user.displayName,
-    provider: userCredentials.user.providerData[0].providerId,
-    photoUrl: userCredentials.user.photoURL,
-  });
-}

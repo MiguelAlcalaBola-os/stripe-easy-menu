@@ -27,14 +27,15 @@ function Navbar() {
 <>
 
       <NavContainer>
-        <h2>EASY <span>MENU</span></h2>
+      <img src="https://i.ibb.co/pKXRwHc/EASY-MENU-nuevo-logo-1.png"></img>
+    
         <h1>Hello, {user.displayName}</h1> 
         <div className={`links ${clicked ? 'active' : ''}`}>
       
         <LogoutButton />
 
 
-          <a href='#'>Salir</a>
+       
         
 <Outlet/>
 
@@ -51,35 +52,54 @@ function Navbar() {
 }
 
 export default Navbar
-/* 
- <Link to="/">Inicio</Link>
-        
-          <Link to="/ingresar">Ingresar</Link>
-          <Link to="#h">Registrarse</Link>
-          <Link to="#h">¿Quienes Somos?</Link>*/
+
 const NavContainer = styled.nav`
-  h2{
+
+h1{
+
+color: #31bfbf;
+font-family: "Secular One", sans-serif;
+font-size: 30px;
+}
+ button {
+  margin-right: 4.7rem;
+    font-size: 14px;
+    padding: 0.9rem 1.8rem;
+    cursor: pointer;
+    background-color: #01be96;
+    border: none;
+    color: #fff;
+    font-weight: 500;
     font-family: "Secular One", sans-serif;
-    color: white;
+    filter: drop-shadow(0px 10px 10px #01be9551);
+    :hover {
+      filter: drop-shadow(0px 10px 10px #01be9570);
+    }
+  }
+img{
+  margin-left: 4.5rem;
+  width: 13rem;
+}
+  h2 {
+    font-family: "Secular One", sans-serif;
+    color: #6cbdff;
     font-weight: 400;
-    span{
+    span {
+      color: #6cbdff;
       font-weight: bold;
     }
   }
-  font-family: "Secular One", sans-serif;
-  padding: .4rem;
-  background-color: #333;
+  padding: 0.4rem;
+  background-color: #fcfcfc;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  a{
-    font-family: "Secular One", sans-serif;
-    color: white;
+  a {
+    color: #000000;
     text-decoration: none;
     margin-right: 1rem;
   }
-  .links{
-    font-family: "Secular One", sans-serif;
+  .links {
     position: absolute;
     top: -700px;
     left: -2000px;
@@ -87,28 +107,25 @@ const NavContainer = styled.nav`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    transition: all .5s ease;
-    a{
-      font-family: "Secular One", sans-serif;
-      color: white;
+    transition: all 0.5s ease;
+    a {
+      color: #000000;
       font-size: 2rem;
       display: block;
     }
-    @media(min-width: 768px){
+    @media (min-width: 768px) {
       position: initial;
       margin: 0;
-      a{
-        font-family: "Secular One", sans-serif;
+      a {
         font-size: 1rem;
-        color: white;
+        color: #000000;
         display: inline;
+        font-family: "Secular One", sans-serif;
       }
       display: block;
     }
   }
-
-  .links.active{
-    font-family: "Secular One", sans-serif;
+  .links.active {
     width: 100%;
     display: block;
     position: absolute;
@@ -118,33 +135,34 @@ const NavContainer = styled.nav`
     left: 0;
     right: 0;
     text-align: center;
-    a{
+    a {
       font-size: 2rem;
       margin-top: 1rem;
       color: white;
     }
   }
-  .burguer{
-    @media(min-width: 768px){
+  .burguer {
+    @media (min-width: 768px) {
       display: none;
     }
   }
-`
+`;
 
 const BgDiv = styled.div`
   background-color: #222222;
-  position:absolute;
+  position: absolute;
   top: -1000px;
   left: -1000px;
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: all .6s ease ;
-  
-  &.active{
+  transition: all 0.6s ease;
+
+  &.active {
     border-radius: 0 0 80% 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }`
+  }
+`;
